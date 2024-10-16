@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: lightgrey;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: navy;
+}
+.logo-text {
+  color: white;
+}
+
+.hamburger-icon {
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger-icon .fa-bars,
+.hamburger-icon .fa-x {
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hamburger-icon input {
+  appearance: none;
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+}
+.navigation a {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    display: block;
+  }
+
+  .navigation {
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+
+  .fa-x {
+    display: none;
+  }
+
+  /*Funciona como :checked, porém pode não funcionar em todos os navegadores*/
+
+  header:has(.hamburger-icon input[type="checkbox"]:checked) .navigation {
+    margin-top: 1rem;
+    height: 100px;
+  }
+
+  header:has(.hamburger-icon input[type="checkbox"]:checked) .fa-bars {
+    display: none;
+  }
+
+  header:has(.hamburger-icon input[type="checkbox"]:checked) .fa-x {
+    display: inline-block;
+  }
+}
+
+/* Content CSS */
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.container:nth-child(1) {
+  margin-top: 0;
+}
+
+.container p {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px black;
+  transition: all 0.5s linear;
+}
+.container button {
+  color: white;
+}
+
+.container-1 {
+  background-image: url("https://media.istockphoto.com/id/1853173882/pt/foto/large-scarlet-macaw-couple-flying-inside-buraco-das-araras-in-the-city-of-jardim-in-the.jpg?s=1024x1024&w=is&k=20&c=2EnfDjV1t_PNe2yXnTxFm-tAnZ-J0kMRAIewhda_U8o=");
+}
+.container-2 {
+  background-image: url("https://media.istockphoto.com/id/1633135035/pt/foto/bee-eater-in-the-danube-delta-in-romania.jpg?s=2048x2048&w=is&k=20&c=hOx0MfjRST_JXN2EB8nEJ94wH8JYuSq_OWRrGxrXfNQ=");
+}
+.container-3 {
+  background-image: url("https://media.istockphoto.com/id/976560418/pt/foto/toucan-tropical-bird-sitting-on-a-tree-branch-in-natural-wildlife-environment-in-rainforest.jpg?s=2048x2048&w=is&k=20&c=16WnY3_lM2YV0U6pTGXeNbfiKpx9LUtjME-L6uFVSJw=");
+}
+
+.container-4 {
+  background-image: url("https://media.istockphoto.com/id/183412466/pt/foto/eastern-bluebirds-machos-e-f%C3%AAmeas.jpg?s=2048x2048&w=is&k=20&c=6qe1AfjAM4lmmpXQ89_lZd_fAiO9spUrSwlcKN6NehI=");
+}
+.container-5 {
+  background-image: url("https://media.istockphoto.com/id/474317452/pt/foto/sialia-sialis.jpg?s=2048x2048&w=is&k=20&c=l7vDW3jcOJlAzU-x0THmn0RtAm950nU5J3OoPNPG1Mo=");
+}
